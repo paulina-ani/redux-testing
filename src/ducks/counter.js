@@ -1,16 +1,14 @@
-import { createStore } from "redux";
-
 const initialState = 8;
 
 //Action types
-const INCREMENT = "INCREMENT";
-const DECREMENT = "DECREMENT";
-const ADD = "ADD";
-const RESET = "RESET";
-const SUBTRACT = "SUBTRACT";
+export const INCREMENT = "INCREMENT";
+export const DECREMENT = "DECREMENT";
+export const ADD = "ADD";
+export const RESET = "RESET";
+export const SUBTRACT = "SUBTRACT";
 
 //Reducer ((state, action) -> nextState)
-function counterReducer(state = initialState, action) {
+export default function counterReducer(state = initialState, action) {
   switch (action.type) {
     case INCREMENT:
       return state + 1;
@@ -25,49 +23,35 @@ function counterReducer(state = initialState, action) {
   }
 }
 
-const store = createStore(counterReducer);
-
 //Action creators
-function increment() {
+export function increment() {
   return {
     type: INCREMENT
   };
 }
 
-function decrement() {
+export function decrement() {
   return {
     type: DECREMENT
   };
 }
 
-function add(value = 0) {
+export function add(value = 0) {
   return {
     type: ADD,
     pauload: value
   };
 }
 
-function reset() {
+export function reset() {
   return {
     type: RESET
   };
 }
 
-function subtract(value = 0) {
+export function subtract(value = 0) {
   return {
     type: SUBTRACT,
     payload: value
   };
 }
-
-console.log(store.getState());
-store.dispatch(increment());
-console.log(store.getState());
-store.dispatch(reset());
-console.log(store.getState());
-store.dispatch(decrement());
-console.log(store.getState());
-store.dispatch(add(5));
-console.log(store.getState());
-store.dispatch(subtract(6));
-console.log(store.getState());
