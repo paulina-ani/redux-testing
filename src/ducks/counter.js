@@ -39,7 +39,7 @@ export function decrement() {
 export function add(value = 0) {
   return {
     type: ADD,
-    pauload: value
+    payload: value
   };
 }
 
