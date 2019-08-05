@@ -1,7 +1,19 @@
 import { createStore, combineReducers } from "redux";
-import counterReducer from "./ducks/counter";
-import appleReducer from "./ducks/apple";
-import { increment, decrement, reset, add, subtract } from "./ducks/counter";
+import counterReducer, {
+  increment,
+  decrement,
+  reset,
+  add,
+  subtract
+} from "./ducks/counter";
+import appleReducer, {
+  bite,
+  wash,
+  debug,
+  takeFromTree,
+  ripe,
+  rot
+} from "./ducks/apple";
 
 const rootReducer = combineReducers({
   counter: counterReducer,
@@ -21,7 +33,14 @@ const actions = [
   reset(),
   add(13),
   subtract(2),
-  decrement()
+  decrement(),
+  wash(),
+  debug(),
+  bite(5),
+  bite(6),
+  ripe(),
+  takeFromTree(),
+  rot()
 ];
 
 actions.forEach(action => {
