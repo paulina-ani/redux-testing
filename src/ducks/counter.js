@@ -20,6 +20,8 @@ export default function counterReducer(state = initialState, action) {
       return initialState;
     case SUBTRACT:
       return state - action.payload;
+    default:
+      return state;
   }
 }
 
