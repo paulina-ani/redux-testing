@@ -1,4 +1,5 @@
 import { createStore, combineReducers } from "redux";
+import { devToolsEnhancer } from "redux-devtools-extension";
 import counterReducer, {
   increment,
   decrement,
@@ -20,7 +21,7 @@ const rootReducer = combineReducers({
   apple: appleReducer
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, devToolsEnhancer());
 store.subscribe(() => {
   console.log(store.getState());
 });
