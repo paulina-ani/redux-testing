@@ -15,11 +15,12 @@ export const Apple = props => {
           padding: "5%",
           margin: "20px"
         }}
-      />
-      <button onClick={props.bite}>Bite</button>
-      <button onClick={props.wash}>Clean</button>
-      <button onClick={props.rot}>Rot</button>
-      <div>Liczba gryzów: {numberOfBites}</div>
+      >
+        <button onClick={props.bite}>Bite</button>
+        <button onClick={props.wash}>Clean</button>
+        <button onClick={props.rot}>Rot</button>
+        <div>Liczba gryzów: {numberOfBites}</div>
+      </div>
     </div>
   );
 };
