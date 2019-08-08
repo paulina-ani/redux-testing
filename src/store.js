@@ -22,6 +22,9 @@ const rootReducer = combineReducers({
 });
 
 const store = createStore(rootReducer, devToolsEnhancer());
+
+export default store;
+
 store.subscribe(() => {
   console.log(store.getState());
 });
