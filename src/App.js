@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Counter } from "./components/Counter";
 import { Apple } from "./components/Apple";
 import store from "./store";
-import { increment } from "./ducks/counter";
+import { increment, decrement, reset } from "./ducks/counter";
 
 function App() {
   return (
@@ -12,6 +12,8 @@ function App() {
         <Counter
           counter={store.getState().counter}
           increment={() => store.dispatch(increment)}
+          decrement={() => store.dispatch(decrement)}
+          reset={() => store.dispatch(reset)}
         />
         <Apple />
       </Fragment>
